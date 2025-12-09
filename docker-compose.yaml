@@ -6,7 +6,6 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    container_name: n8n-task-runner
     restart: always
     
     # Connect to the coolify network so we can talk to other apps if needed
