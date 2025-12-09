@@ -6,7 +6,9 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
+    container_name: ${N8N_RUNNER_NAME:-n8n-runner}
     restart: always
+    
     
     environment:
       # REQUIRED: Must match the token in your main n8n instance
