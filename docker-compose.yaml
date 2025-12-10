@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   n8n-worker:
-    image: 'n8nio/n8n:latest'
+    image: 'n8nio/n8n:stable'
     command: worker
     restart: always
     environment:
@@ -43,7 +43,7 @@ services:
       start_period: 60s
   task-runner:
     # This tells Coolify to build the Dockerfile in the current directory
-    image: 'n8nio/runners:latest'
+    image: 'n8nio/runners:stable'
     restart: always
     environment:
       # REQUIRED: Must match the token in your main n8n instance
