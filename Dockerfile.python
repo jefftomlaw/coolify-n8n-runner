@@ -1,0 +1,31 @@
+# Dockerfile.python
+
+# 1. Use n8nio/runners as base
+FROM n8nio/runners:beta
+
+# 2. Switch to root to install system dependencies [1]
+USER root
+
+# 3. Install System Dependencies (Required for OCR and Image processing) [1]
+RUN apk add --no-cache \
+    tesseract-ocr \
+    tesseract-ocr-data-eng \
+    poppler-utils \
+    jpeg-dev \
+    zlib-dev \
+    build-base \
+    python3-dev
+
+# 4. Install Python Libraries [2]
+# We cd into the Python runner directory so 'uv' updates the correct venv
+RUN cd /opt/runners/task-runner-python \
+    && uv pip install \
+    pytesseract \
+    pdf2image \
+    Pillow
+
+# 5. Fix Permissions [2]
+RUN chown -R runner:runner /opt/runners
+
+# 6. Switch back to restricted user [3]
+USER runner
