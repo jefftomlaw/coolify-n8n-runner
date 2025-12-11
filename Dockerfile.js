@@ -8,7 +8,6 @@ USER root
 
 # 3. Install JavaScript Packages
 # We delete pnpm-lock.yaml first to avoid "Cannot find resolution" errors
-# This forces pnpm to resolve dependencies fresh for the new environment.
 RUN cd /opt/runners/task-runner-javascript \
     && rm -f pnpm-lock.yaml \
     && pnpm add \
