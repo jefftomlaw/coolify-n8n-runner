@@ -57,7 +57,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.js
-    command: ["--runner-type", "javascript"]
+    command: ["javascript"]
     restart: always
     environment:
       - N8N_RUNNERS_RUNNER_TYPE=javascript
@@ -81,7 +81,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.python
-    command: ["--runner-type", "python"]
+    command: ["python"]
     restart: always
     environment:      
       - N8N_RUNNERS_RUNNER_TYPE=python
