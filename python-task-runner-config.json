@@ -2,7 +2,7 @@
   "task-runners": [
     {
       "runner-type": "python",
-      "dir": "/usr/local/bin/task-runner-launcher",
+      "workdir": "/home/runner",
       "health-check-server-port": "5681",
       "env-overrides": {
         "N8N_RUNNERS_EXTERNAL_ALLOW": "pytesseract,pdf2image,Pillow"
