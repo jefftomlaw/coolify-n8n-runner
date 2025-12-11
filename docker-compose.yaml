@@ -59,7 +59,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.js  # Points to the JS-specific file
-   restart: always
+    restart: always
     environment:      
       # Connect to worker's Task Broker since executions run on worker in queue mode
       - 'N8N_RUNNERS_TASK_BROKER_URI=${N8N_RUNNERS_TASK_BROKER_URI:-http://n8n-worker:5679}'
@@ -84,7 +84,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.python # Points to the Python-specific file
-   restart: always
+    restart: always
     environment:      
       # Connect to worker's Task Broker since executions run on worker in queue mode
       - 'N8N_RUNNERS_TASK_BROKER_URI=${N8N_RUNNERS_TASK_BROKER_URI:-http://n8n-worker:5679}'
