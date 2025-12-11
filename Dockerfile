@@ -1,5 +1,5 @@
 # 1. Use n8nio/runners as base (Source: [2])
-FROM n8nio/runners:latest
+FROM n8nio/runners:beta
 
 # 2. Switch to root to install dependencies (Source: [2])
 USER root
