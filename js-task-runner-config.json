@@ -2,7 +2,7 @@
   "task-runners": [
     {
       "runner-type": "javascript",
-      "dir": "/usr/local/bin/task-runner-launcher",
+      "workdir": "/home/runner",
       "health-check-server-port": "5682",
       "env-overrides": {
         "NODE_FUNCTION_ALLOW_EXTERNAL": "pdf-lib,pdf-img-convert,pdf-parse"
