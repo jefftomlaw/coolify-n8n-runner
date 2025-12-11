@@ -2,10 +2,17 @@
   "task-runners": [
     {
       "runner-type": "javascript",
-      "health-check-server-port": "5682",      
+      "workdir": "/home/runner",
+      "command": "/usr/local/bin/node",
+      "args": [
+        "--disallow-code-generation-from-strings",
+        "--disable-proto=delete",
+        "/opt/runners/task-runner-javascript/dist/start.js"
+      ],
+      "health-check-server-port": "5680",
       "env-overrides": {
         "NODE_OPTIONS": "--enable-source-maps",
-        "N8N_RUNNERS_EXTERNAL_ALLOW": "pdf-lib,pdf-img-convert,pdf-parse"
+        "NODE_FUNCTION_ALLOW_EXTERNAL": "pdf-lib,pdf-img-convert,pdf-parse"
       }
     }
   ]
