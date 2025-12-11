@@ -13,6 +13,19 @@
         "PYTHONPATH": "/opt/runners/task-runner-python",
         "N8N_RUNNERS_EXTERNAL_ALLOW": "pytesseract,pdf2image,Pillow"
       }
+    },
+    {
+      "runner-type": "javascript",
+      "health-check-server-port": "5681",
+      "workdir": "/home/runner",
+      "command": "node",
+      "args": [
+        "/opt/runners/task-runner-javascript/dist/src/main.js"
+      ],
+      "env-overrides": {
+        "NODE_OPTIONS": "--enable-source-maps",
+        "N8N_RUNNERS_EXTERNAL_ALLOW": "pdf-lib,pdf-img-convert,pdf-parse"
+      }
     }
   ]
 }
