@@ -71,7 +71,7 @@ services:
     depends_on:
       -  n8n-worker
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:5681/health || exit 1"]
+      test: ["CMD-SHELL", "wget -qO- http://localhost:5681/health || exit 1"]
       interval: 10s
       timeout: 10s
       retries: 5
@@ -95,7 +95,7 @@ services:
     depends_on:
       -  n8n-worker
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:5682/health || exit 1"]
+      test: ["CMD-SHELL", "wget -qO- http://localhost:5682/health || exit 1"]
       interval: 10s
       timeout: 10s
       retries: 5
