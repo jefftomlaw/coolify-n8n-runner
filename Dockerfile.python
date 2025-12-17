@@ -35,7 +35,10 @@ RUN /opt/runners/task-runner-python/.venv/bin/pip install --no-cache-dir --upgra
     Pillow \
     requests
 
-# 5. Fix permissions (Important since we created the venv as root)
+# 5. Remove package manager
+RUN apk del apk-tools && rm -rf /var/cache/apk/*
+
+# 6. Fix permissions (Important since we created the venv as root)
 RUN chown -R runner:runner /opt/runners/task-runner-python
 
 USER runner
