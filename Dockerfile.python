@@ -1,4 +1,5 @@
 # Use the official runner image as the base
+ARG N8N_VERSION=latest
 FROM n8nio/runners:${N8N_VERSION}
 
 USER root
