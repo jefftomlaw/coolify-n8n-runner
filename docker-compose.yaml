@@ -45,11 +45,11 @@ services:
     volumes:
       - 'n8n_worker_data:/home/node/.n8n'
     healthcheck:
-     test: ["CMD-SHELL", "pgrep -f 'n8n' || exit 1"] # Checks if the n8n process is running
-     interval: 15s
-     timeout: 30s
-     retries: 10
-     start_period: 60s
+      test: ["CMD-SHELL", "nc -z localhost 5679 || exit 1"]
+      interval: 15s
+      timeout: 30s
+      retries: 10
+      start_period: 60s
 
   runner-js:
     build:
@@ -69,7 +69,7 @@ services:
     depends_on:
       -  n8n-worker
     healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://localhost:5681/health || exit 1"]
+      test: ["CMD-SHELL", "wget -qO- http://localhost:5681/ || exit 1"]
       interval: 10s
       timeout: 10s
       retries: 5
@@ -93,7 +93,7 @@ services:
     depends_on:
       -  n8n-worker
     healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://localhost:5682/health || exit 1"]
+      test: ["CMD-SHELL", "wget -qO- http://localhost:5682/ || exit 1"]
       interval: 10s
       timeout: 10s
       retries: 5
