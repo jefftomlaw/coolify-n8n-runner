@@ -34,7 +34,8 @@ RUN /opt/runners/task-runner-python/.venv/bin/pip install --no-cache-dir --upgra
     pytesseract \
     pdf2image \
     Pillow \
-    requests
+    requests \
+    pypdf
 
 # 5. Remove package manager
 RUN apk del apk-tools && rm -rf /var/cache/apk/*
