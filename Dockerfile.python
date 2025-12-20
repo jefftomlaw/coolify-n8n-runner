@@ -16,6 +16,7 @@ RUN ARCH=$(uname -m) && \
 # 2. Install system dependencies
 RUN apk add --no-cache \
     tesseract-ocr \
+    tesseract-ocr-data-eng \
     tesseract-ocr-dev \
     poppler-utils \
     jpeg-dev \
